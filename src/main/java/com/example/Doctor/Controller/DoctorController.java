@@ -55,9 +55,10 @@ public class DoctorController {
 	}
 	
 	@GetMapping("/{salary}")
-	public List<Doctor> getDoctorBySorting(String salary)
+	public List<Doctor> getDoctorBySorting(@PathVariable String salary)
 	{
-		return service.findDoctorWithSorting(salary);
+		 List<Doctor> allDoctors = service.findDoctorWithSorting(salary);
+		return allDoctors;
 	}
 	
 	
